@@ -8,9 +8,18 @@
         </div>
         <p>You are searching for {{ searchTerm }}</p>
     </form>
-    <ul class="news__list">
-        <li v-for="article in articles" class="news__item">{{ article.title }}</li>
-    </ul>
+    <div class = "card-group">
+        <div v-for="article in articles" class="container_view">
+            <div class = "grid_view">
+                <img class="card-img-top" :src=" article.urlToImage " alt="">
+                <div class="card-body">
+                    <h4 class="card-title"> {{ article.title }}</h4>
+                    <p class="card-text"> {{ article.description }}</p>
+                </div>
+            </div> 
+        </div>  
+    </div>
+
 </template>
 
 <script>
